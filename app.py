@@ -9,28 +9,24 @@ import pandas as pd
 from datetime import datetime
 import os
 import re
-
-# Page configuration
-st.set_page_config(
-    page_title="Kodesx Academy | Robotics · AI · Web Development",
-    page_icon="🤖",
-    layout="wide",
-    initial_sidebar_state="collapsed"
-)
-
-# Custom CSS with NEW COLOR SCHEME (Purple/Blue)
+# Custom CSS with DARK MODE COLOR SCHEME
 st.markdown("""
 <style>
     /* Main styling */
     .stApp {
-        background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    }
+    
+    /* Main text color */
+    .main, .stMarkdown, p, h1, h2, h3, label {
+        color: #f1f5f9 !important;
     }
     
     /* Hero section */
     .hero-title {
         font-size: 3.5rem;
         font-weight: 800;
-        background: linear-gradient(135deg, #6366f1, #8b5cf6);
+        background: linear-gradient(135deg, #38bdf8, #818cf8);
         -webkit-background-clip: text;
         -webkit-text-color: transparent;
         background-clip: text;
@@ -39,31 +35,35 @@ st.markdown("""
     
     /* Course cards */
     .course-card {
-        background: white;
+        background: #1e293b;
         padding: 1.5rem;
         border-radius: 20px;
-        border: 1px solid #eef2f8;
-        box-shadow: 0 4px 12px rgba(99,102,241,0.08);
+        border: 1px solid #334155;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         transition: transform 0.3s;
         height: 100%;
     }
     
     .course-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 8px 25px rgba(99,102,241,0.15);
-        border-color: #6366f1;
+        box-shadow: 0 8px 25px rgba(56,189,248,0.2);
+        border-color: #38bdf8;
     }
     
     .course-title {
         font-size: 1.5rem;
         font-weight: 700;
-        color: #6366f1;
+        color: #38bdf8;
         margin-bottom: 0.5rem;
+    }
+    
+    .feature-list li {
+        color: #cbd5e1;
     }
     
     /* Stats styling */
     .stat-box {
-        background: linear-gradient(135deg, #6366f1, #8b5cf6);
+        background: linear-gradient(135deg, #38bdf8, #818cf8);
         padding: 1rem;
         border-radius: 15px;
         text-align: center;
@@ -72,17 +72,18 @@ st.markdown("""
     
     /* Testimonial cards */
     .testimonial-card {
-        background: white;
+        background: #1e293b;
         padding: 1.5rem;
         border-radius: 20px;
-        border-left: 4px solid #8b5cf6;
+        border-left: 4px solid #38bdf8;
         margin: 1rem 0;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        color: #cbd5e1;
     }
     
     /* Button styling */
     .stButton > button {
-        background: linear-gradient(135deg, #6366f1, #8b5cf6);
+        background: linear-gradient(135deg, #38bdf8, #818cf8);
         color: white;
         border-radius: 40px;
         padding: 0.5rem 2rem;
@@ -93,17 +94,23 @@ st.markdown("""
     
     .stButton > button:hover {
         transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(99,102,241,0.4);
-        background: linear-gradient(135deg, #4f46e5, #7c3aed);
+        box-shadow: 0 5px 15px rgba(56,189,248,0.4);
     }
     
     /* Form styling */
     .form-container {
-        background: white;
+        background: #1e293b;
         padding: 2rem;
         border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(99,102,241,0.1);
-        border: 1px solid #e0e7ff;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        border: 1px solid #334155;
+    }
+    
+    /* Input fields */
+    .stTextInput > div > div > input, .stNumberInput > div > div > input, .stSelectInput > div > div {
+        background-color: #0f172a !important;
+        color: #f1f5f9 !important;
+        border-color: #334155 !important;
     }
     
     /* Section headers */
@@ -112,11 +119,22 @@ st.markdown("""
         font-weight: 700;
         text-align: center;
         margin-bottom: 2rem;
-        background: linear-gradient(135deg, #6366f1, #8b5cf6);
+        background: linear-gradient(135deg, #38bdf8, #818cf8);
         -webkit-background-clip: text;
         -webkit-text-color: transparent;
         background-clip: text;
     }
+    
+    /* Sidebar */
+    .css-1d391kg, .css-1633t6s {
+        background-color: #0f172a;
+    }
+    
+    hr {
+        border-color: #334155;
+    }
+</style>
+""", unsafe_allow_html=True)
 </style>
 """, unsafe_allow_html=True)
 # Excel file handling functions
