@@ -442,3 +442,98 @@ elif page == "📚 Flagship Courses":
         with v_col1:
             st.markdown("##### 🟦 Robotics & ROS2 Architectural Setup")
             # You can replace this demo URL
+# ==========================================
+# ENROLLMENT PAGE
+# ==========================================
+elif page == "📞 Enroll Now":
+    st.markdown('<h2 class="section-header">Accelerate Your Engineering Career</h2>', unsafe_allow_html=True)
+    
+    with st.container():
+        st.markdown('<div class="form-container">', unsafe_allow_html=True)
+        
+        form_col1, form_col2 = st.columns(2, gap="large")
+        
+        with form_col1:
+            name = st.text_input("👤 Full Name *", placeholder="e.g. Alex Mercer")
+            age = st.number_input("🎂 Age *", min_value=5, max_value=100, step=1, value=20)
+            email = st.text_input("📧 Personal / Professional Email *", placeholder="alex@domain.com")
+        
+        with form_col2:
+            phone = st.text_input("📞 Phone Number (with Country Code) *", placeholder="+20 123 456 7890")
+            course = st.selectbox(
+                "📚 Select Target Track *",
+                ["Robotics Engineering", "Artificial Intelligence", "Full-Stack Web Architect"]
+            )
+            hear_about = st.selectbox(
+                "Discovery Source",
+                ["Social Networks", "Professional Recommendation", "Search Platforms", "Other"]
+            )
+            
+        st.markdown("<br>", unsafe_allow_html=True)
+        submit_btn = st.button("🚀 Process Application Execution", use_container_width=True)
+        
+        if submit_btn:
+            errors = []
+            if not name: errors.append("Name profile entry is required")
+            if not email or not validate_email(email): errors.append("Valid syntax for Email is required")
+            if not phone or not validate_phone(phone): errors.append("Valid parameters for phone required")
+            
+            if errors:
+                for error in errors:
+                    st.error(f"⚠️ {error}")
+            else:
+                save_student_data(name, age, email, phone, course)
+                st.balloons()
+                st.success(f"✔️ Application sequence complete! Welcome, {name}. Our team will contact you within 24 hours.")
+                
+        st.markdown('</div>', unsafe_allow_html=True)
+
+# ==========================================
+# ADMIN DASHBOARD
+# ==========================================
+elif page == "📊 Admin Dashboard":
+    st.markdown('<h2 class="section-header">Terminal Access Layer</h2>', unsafe_allow_html=True)
+    
+    _, center_col, _ = st.columns([1, 1.5, 1])
+    with center_col:
+        password = st.text_input("Provide Admin Decryption Key:", type="password")
+    
+    if password == "admin123":
+        st.success("🔒 Access Authorization Granted.")
+        
+        if os.path.exists(EXCEL_FILE):
+            df = pd.read_excel(EXCEL_FILE)
+            
+            if not df.empty:
+                m_col1, m_col2, m_col3, m_col4 = st.columns(4)
+                with m_col1: st.metric("Total Applications Ingested", len(df))
+                with m_col2: st.metric("Active Live Tracks", 3)
+                with m_col3: 
+                    avg_age = df['Age'].mean() if 'Age' in df.columns else 0
+                    st.metric("Mean Class Age", f"{avg_age:.1f} yrs")
+                with m_col4:
+                    top_c = df['Course Interest'].mode().iloc[0] if not df['Course Interest'].empty else "None"
+                    st.metric("High-Demand Track", top_c)
+                
+                st.markdown("<br><hr>", unsafe_allow_html=True)
+                
+                st.markdown("### 📊 Distribution Across Modules")
+                st.bar_chart(df['Course Interest'].value_counts())
+                
+                st.markdown("### 📋 Student Ingestion Database")
+                st.dataframe(df.style.background_gradient(cmap="Blues"), use_container_width=True)
+                
+                csv_data = df.to_csv(index=False).encode('utf-8')
+                st.download_button(
+                    label="📥 Export Secure CSV File",
+                    data=csv_data,
+                    file_name=f"kodex_db_{datetime.now().strftime('%Y%m%d')}.csv",
+                    mime="text/csv"
+                )
+            else:
+                st.info("Database array is initialized but contains 0 records.")
+        else:
+            st.info("No active Relational Database file found.")
+    elif password != "":
+        st.error("🛑 Security token mismatch. Access Denied.")
+
