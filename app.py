@@ -459,4 +459,4 @@ elif page == "📞 Contact":
 
 # Footer
 st.markdown("---")
-st.markdown('<div class="footer"><p>© 2026 Kodesx Academy — Where innovators are made. All rights reserved.</p><p style="margin-top:8px;">📧 kodex.accademy@gmail.com &nbsp;|&nbsp; 📞 +(20) 1551351712</p></div>', unsafe_allow_html=True)
+st.markdown('<div class="footer"><p>© 2026 Kodesx Academy — Where innovators are made. All rights reserved.</p><p style="margin-top:8px;">📧 kodex.accademy@gmail.com &nbsp;|&nbsp; 📞 +(20) 01551351712</p></div>', unsafe_allow_html=True)
