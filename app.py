@@ -263,7 +263,7 @@ elif page == "🏠 Home":
         with col_a:
             st.markdown('<div class="stat-box"><div class="stat-number">4.9</div><div>⭐ student rating</div></div>', unsafe_allow_html=True)
         with col_b:
-            st.markdown('<div class="stat-box"><div class="stat-number">1,800+</div><div>active learners</div></div>', unsafe_allow_html=True)
+            st.markdown('<div class="stat-box"><div class="stat-number">800+</div><div>active learners</div></div>', unsafe_allow_html=True)
         with col_c:
             st.markdown('<div class="stat-box"><div class="stat-number">25+</div><div>industry experts</div></div>', unsafe_allow_html=True)
     
@@ -272,7 +272,7 @@ elif page == "🏠 Home":
         <div style="background:linear-gradient(145deg, #2731A1, #343540); border-radius:60px; padding:2rem; text-align:center;">
             <div style="font-size:5rem;">🤖🧠💻</div>
             <h3 style="color:#1E3C72;">Learn · Build · Innovate</h3>
-            <p>Join 1,800+ students worldwide</p>
+            <p>Join 800+ students worldwide</p>
         </div>
         """, unsafe_allow_html=True)
     
