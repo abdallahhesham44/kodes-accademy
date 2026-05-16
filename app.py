@@ -4,6 +4,12 @@ from datetime import datetime
 import os
 import re
 
+import streamlit as st
+import pandas as pd
+from datetime import datetime
+import os
+import re
+
 # Page configuration
 st.set_page_config(
     page_title="Kodesx Academy | Robotics · AI · Web Development",
@@ -12,29 +18,23 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# Custom CSS for better styling
+# Custom CSS with NEW COLOR SCHEME (Purple/Blue)
 st.markdown("""
 <style>
     /* Main styling */
     .stApp {
-        background: linear-gradient(135deg, #f5f7ff 0%, #ffffff 100%);
+        background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
     }
     
     /* Hero section */
     .hero-title {
         font-size: 3.5rem;
         font-weight: 800;
-        background: linear-gradient(135deg, #1E3C72, #2A5298);
+        background: linear-gradient(135deg, #6366f1, #8b5cf6);
         -webkit-background-clip: text;
         -webkit-text-color: transparent;
         background-clip: text;
         margin-bottom: 1rem;
-    }
-    
-    .hero-subtitle {
-        font-size: 1.2rem;
-        color: #4a5568;
-        margin-bottom: 2rem;
     }
     
     /* Course cards */
@@ -43,50 +43,31 @@ st.markdown("""
         padding: 1.5rem;
         border-radius: 20px;
         border: 1px solid #eef2f8;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        box-shadow: 0 4px 12px rgba(99,102,241,0.08);
         transition: transform 0.3s;
         height: 100%;
     }
     
     .course-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-    }
-    
-    .course-icon {
-        font-size: 3rem;
-        margin-bottom: 1rem;
+        box-shadow: 0 8px 25px rgba(99,102,241,0.15);
+        border-color: #6366f1;
     }
     
     .course-title {
         font-size: 1.5rem;
         font-weight: 700;
-        color: #1E3C72;
+        color: #6366f1;
         margin-bottom: 0.5rem;
-    }
-    
-    .feature-list {
-        list-style: none;
-        padding-left: 0;
-    }
-    
-    .feature-list li {
-        padding: 0.3rem 0;
-        color: #4a5568;
     }
     
     /* Stats styling */
     .stat-box {
-        background: linear-gradient(135deg, #1E3C72, #2A5298);
+        background: linear-gradient(135deg, #6366f1, #8b5cf6);
         padding: 1rem;
         border-radius: 15px;
         text-align: center;
         color: white;
-    }
-    
-    .stat-number {
-        font-size: 2rem;
-        font-weight: 800;
     }
     
     /* Testimonial cards */
@@ -94,14 +75,14 @@ st.markdown("""
         background: white;
         padding: 1.5rem;
         border-radius: 20px;
-        border-left: 4px solid #2A5298;
+        border-left: 4px solid #8b5cf6;
         margin: 1rem 0;
         box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
     
     /* Button styling */
     .stButton > button {
-        background: linear-gradient(135deg, #1E3C72, #2A5298);
+        background: linear-gradient(135deg, #6366f1, #8b5cf6);
         color: white;
         border-radius: 40px;
         padding: 0.5rem 2rem;
@@ -112,7 +93,8 @@ st.markdown("""
     
     .stButton > button:hover {
         transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(30,60,114,0.3);
+        box-shadow: 0 5px 15px rgba(99,102,241,0.4);
+        background: linear-gradient(135deg, #4f46e5, #7c3aed);
     }
     
     /* Form styling */
@@ -120,16 +102,8 @@ st.markdown("""
         background: white;
         padding: 2rem;
         border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    }
-    
-    /* Footer */
-    .footer {
-        text-align: center;
-        padding: 2rem;
-        color: #5a6e85;
-        border-top: 1px solid #e2e8f0;
-        margin-top: 3rem;
+        box-shadow: 0 10px 30px rgba(99,102,241,0.1);
+        border: 1px solid #e0e7ff;
     }
     
     /* Section headers */
@@ -138,15 +112,13 @@ st.markdown("""
         font-weight: 700;
         text-align: center;
         margin-bottom: 2rem;
-        color: #0a1929;
-    }
-    
-    hr {
-        margin: 2rem 0;
+        background: linear-gradient(135deg, #6366f1, #8b5cf6);
+        -webkit-background-clip: text;
+        -webkit-text-color: transparent;
+        background-clip: text;
     }
 </style>
 """, unsafe_allow_html=True)
-
 # Excel file handling functions
 EXCEL_FILE = "kodesx_students.xlsx"
 
