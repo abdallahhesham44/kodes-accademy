@@ -255,7 +255,7 @@ elif page == "🏠 Home":
     
     with col1:
         st.markdown('<p style="background:#2A5298; display:inline-block; padding:6px 14px; border-radius:30px; font-size:0.85rem;">🚀 Future-tech learning hub</p>', unsafe_allow_html=True)
-        st.markdown('<h1 style="font-size:3rem; font-weight:800;">Master <span style="color:#2A5298;">Robotics, AI & Web</span><br>with Kodesx Academy</h1>', unsafe_allow_html=True)
+        st.markdown('<h1 style="font-size:3rem; font-weight:800;">Master <span style="color:#2A5298;">Robotics, AI & Web</span><br>with Kodex Academy</h1>', unsafe_allow_html=True)
         st.markdown('<p style="font-size:1.2rem; color:#4a5568;">Hands-on projects, expert mentors, and career-ready skills in the most in-demand tech fields.</p>', unsafe_allow_html=True)
         
         # Stats row
