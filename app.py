@@ -295,7 +295,7 @@ elif page == "🏠 Home":
     
     with col2:
         st.markdown("""
-        <div style="background:#f0f4fe; padding:1.5rem; border-radius:20px;">
+        <div style="background:#2731A1; padding:1.5rem; border-radius:20px;">
             <h4>📊 Our Impact</h4>
             <p>🎓 <strong>92%</strong> job placement rate</p>
             <p>🏆 <strong>50+</strong> partner companies</p>
