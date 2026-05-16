@@ -133,8 +133,7 @@ st.markdown("""
     hr {
         border-color: #334155;
     }
-</style>
-""", unsafe_allow_html=True)
+
 </style>
 """, unsafe_allow_html=True)
 # Excel file handling functions
