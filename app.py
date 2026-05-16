@@ -193,7 +193,7 @@ page = st.sidebar.radio(
 )
 st.sidebar.markdown("---")
 st.sidebar.info(
-    "**Kodesx Academy**\n\n"
+    "**Kodex Academy**\n\n"
     "📧 kodex.accademy@gmail.com\n\n"
     "📞 + (20) 01551351712"
 )
