@@ -194,8 +194,8 @@ page = st.sidebar.radio(
 st.sidebar.markdown("---")
 st.sidebar.info(
     "**Kodesx Academy**\n\n"
-    "📧 hello@kodesx.com\n\n"
-    "📞 +1 (555) 123-4567"
+    "📧 kodex.accademy@gmail.com\n\n"
+    "📞 + (20) 01551351712"
 )
 
 # Admin login (simple for demo)
