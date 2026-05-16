@@ -368,8 +368,8 @@ elif page == "📚 Courses":
     
     testimonials = [
         {"text": "The Robotics course at Kodesx gave me hands-on experience I couldn't get anywhere else. I built a line-following robot and a robotic arm. Now I'm working as a robotics engineer!", "name": "Ahmed R., Robotics Engineer"},
-        {"text": "The AI program is exceptional. The instructors break down complex ML concepts into digestible lessons. The projects helped me land a data scientist role within 3 months.", "name": "Sara M., AI Specialist"},
-        {"text": "From zero to full-stack developer in 12 weeks. The web dev course is intense but worth it. The career support team helped me prepare for interviews.", "name": "Omar K., Full-Stack Dev"}
+        {"text": "The AI program is exceptional. The instructors break down complex ML concepts into digestible lessons. The projects helped me land a data scientist role within 6 months.", "name": "Sara M., AI Specialist"},
+        {"text": "From zero to full-stack developer in 24 weeks. The web dev course is intense but worth it. The career support team helped me prepare for interviews.", "name": "Omar K., Full-Stack Dev"}
     ]
     
     for idx, testimonial in enumerate(testimonials):
@@ -455,8 +455,8 @@ elif page == "📞 Contact":
     with col2:
         st.markdown("**📞 Phone**\n+(20) 01551351712")
     with col3:
-        st.markdown("**🌐 Location**\nOnline · Worldwide")
+        st.markdown("**🌐 Location**\nOnline & Offline · Worldwide")
 
 # Footer
 st.markdown("---")
-st.markdown('<div class="footer"><p>© 2025 Kodesx Academy — Where innovators are made. All rights reserved.</p><p style="margin-top:8px;">📧 hello@kodesx.com &nbsp;|&nbsp; 📞 +1 (555) 123-4567</p></div>', unsafe_allow_html=True)
+st.markdown('<div class="footer"><p>© 2026 Kodesx Academy — Where innovators are made. All rights reserved.</p><p style="margin-top:8px;">📧 kodex.accademy@gmail.com &nbsp;|&nbsp; 📞 +(20) 1551351712</p></div>', unsafe_allow_html=True)
