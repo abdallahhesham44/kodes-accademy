@@ -251,7 +251,7 @@ if page == "📊 Admin Dashboard":
 # Main page content
 elif page == "🏠 Home":
     # Hero section
-    col1, col2 = st.columns([1.5, 1])
+    col1, col2 = st.columns([2, 1.5])
     
     with col1:
         st.markdown('<p style="background:#2A5298; display:inline-block; padding:6px 14px; border-radius:30px; font-size:0.85rem;">🚀 Future-tech learning hub</p>', unsafe_allow_html=True)
