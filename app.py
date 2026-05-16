@@ -269,7 +269,7 @@ elif page == "🏠 Home":
     
     with col2:
         st.markdown("""
-        <div style="background:linear-gradient(145deg, #e0e7ff, #f5f7ff); border-radius:40px; padding:2rem; text-align:center;">
+        <div style="background:linear-gradient(145deg, #2731A1, #343540); border-radius:40px; padding:2rem; text-align:center;">
             <div style="font-size:5rem;">🤖🧠💻</div>
             <h3 style="color:#1E3C72;">Learn · Build · Innovate</h3>
             <p>Join 1,800+ students worldwide</p>
